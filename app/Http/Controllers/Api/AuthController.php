@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Usuarios;
-use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -30,7 +29,6 @@ class AuthController extends Controller
             ], 401);
         }
 
-        // Crear token Sanctum
         $token = $usuario->createToken('auth_token')->plainTextToken;
 
         return response()->json([
@@ -38,6 +36,11 @@ class AuthController extends Controller
             'usuario' => $usuario,
             'token' => $token
         ]);
+    }
+
+    public function me(Request $request)
+    {
+        return response()->json($request->user());
     }
 
     public function logout(Request $request)

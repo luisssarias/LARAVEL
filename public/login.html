@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | compraFacil </title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+     
+    <main class="page">
+        <section class="card">
+            <header class="card__header">
+                <div class="brand">
+                   <div class="brand__mark">CF</div>
+                   <div class="brand__text">
+                    <div class="brand__name">compraFacil</div>
+                    <div class="brand__tag">
+                        Acceso al sistema</div>
+                    </div>
+                </div>
+            </header>
+        
+            <form id="loginForm" class="form" novalidate>
+            <div class="field">
+                <label for="correo"
+                class="field__label">Correo</label>
+                <input id="correo"
+                class="field__input" type="text" autocomplete="correo" placeholder="Ej. luis@" required>
+            </div>
+
+            <div class="field">
+                <label for="contrasena"
+                class="field__label">Contraseña</label>
+                <input id="contrasena"
+                class="field__input" type="password" 
+                autocomplete="current-password" 
+                placeholder="********" required/>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Entrar</button>
+
+            <p id="msg" class="msg" aria-live="polite"></p>
+            </form>
+
+            <footer class="card__footer">
+                <small>©<span id="year"></span> compraFacil </small>
+            </footer>
+           </section> 
+        </main>
+
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+        <script src="js/login.js"></script>
+</body>
+</html>
